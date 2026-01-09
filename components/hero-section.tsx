@@ -3,7 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion"
 import { useRef } from "react"
 import Image from "next/image"
-import { Compass, Users, Sparkles, Mic } from "lucide-react"
+import { MapPin, Clock } from "lucide-react"
 import { Reveal } from "./reveal"
 import { BlurPanel } from "./blur-panel"
 
@@ -14,7 +14,7 @@ export function HeroSection() {
     offset: ["start start", "end start"],
   })
 
-  const imageScale = useTransform(scrollYProgress, [0, 1], [1.05, 0.95]) // Reduced hero image shrink from 15% to 5%
+  const imageScale = useTransform(scrollYProgress, [0, 1], [1.05, 0.95])
   const imageY = useTransform(scrollYProgress, [0, 1], [0, -50])
   const contentY = useTransform(scrollYProgress, [0, 1], [0, 100])
   const contentOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
@@ -52,14 +52,14 @@ export function HeroSection() {
         transition={{ duration: 1.2, ease: [0.21, 0.47, 0.32, 0.98] }}
       >
         <Image
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/u3195299943_une_vue_sur_lespace_toil_--ar_11_--sref_httpss.mj_f1cd1575-c301-46fa-8b30-665ae1ab22a0_3_bloom_subtle_6x.png-EslKdscYhdWOUeP4RBajclEejxh8iO.jpeg"
-          alt="Southbound - Purpose-driven recruitment platform for Africa"
+          src="/kush-hero.jpg"
+          alt="Kush Collective - Premium cannabis club in Sea Point, Cape Town"
           fill
           className="object-cover"
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-black/20" />
+        <div className="absolute inset-0 bg-black/40" />
       </motion.div>
 
       {/* Content */}
@@ -68,24 +68,29 @@ export function HeroSection() {
         style={{ y: contentY, opacity: contentOpacity }}
       >
         <div className="container-custom text-center text-white">
+          <motion.p
+            className="text-[#d4c4a8] font-medium tracking-[0.25em] uppercase text-sm mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: [0.21, 0.47, 0.32, 0.98] }}
+          >
+            Private Members Collective
+          </motion.p>
+
           <Reveal>
-            <h1 className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold leading-none tracking-tight mb-6">
-              <AnimatedText text="Build your future." delay={0.5} />
-              <br />
-              <span className="italic font-light">
-                <AnimatedText text="Find your purpose." delay={1.1} />
-              </span>
+            <h1 className="font-[family-name:var(--font-playfair)] text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold leading-none tracking-tight mb-8">
+              <AnimatedText text="Kush Collective" delay={0.5} />
             </h1>
           </Reveal>
 
           <Reveal delay={0.2}>
             <motion.p
-              className="text-lg md:text-xl text-white/90 mb-12 leading-relaxed max-w-2xl mx-auto"
+              className="text-lg md:text-xl text-white/70 mb-14 leading-relaxed max-w-2xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.7, ease: [0.21, 0.47, 0.32, 0.98] }}
+              transition={{ duration: 0.8, delay: 0.9, ease: [0.21, 0.47, 0.32, 0.98] }}
             >
-              Not just another job board. We use psychology to match who you are with where you belong.
+              For the connoisseurs. For the casuals. For the culture.
             </motion.p>
           </Reveal>
 
@@ -94,15 +99,20 @@ export function HeroSection() {
               className="flex flex-col sm:flex-row gap-4 justify-center"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.9, ease: [0.21, 0.47, 0.32, 0.98] }}
+              transition={{ duration: 0.8, delay: 1.1, ease: [0.21, 0.47, 0.32, 0.98] }}
             >
-              <button className="px-8 py-4 bg-white text-black font-semibold rounded-full hover:bg-white/90 transition-all flex items-center gap-2 justify-center">
-                <Mic className="w-5 h-5" />
-                I'm looking for work
-              </button>
-              <button className="px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-full hover:bg-white/10 transition-all">
-                I'm hiring talent
-              </button>
+              <a
+                href="#about"
+                className="px-10 py-4 bg-[#f5f0e8] text-[#1a3329] font-semibold tracking-wide uppercase text-sm hover:bg-white transition-all"
+              >
+                Explore the Club
+              </a>
+              <a
+                href="#membership"
+                className="px-10 py-4 bg-transparent border border-[#f5f0e8]/60 text-[#f5f0e8] font-semibold tracking-wide uppercase text-sm hover:bg-white/10 hover:border-[#f5f0e8] transition-all"
+              >
+                Become a Member
+              </a>
             </motion.div>
           </Reveal>
         </div>
@@ -115,19 +125,16 @@ export function HeroSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 1.2, ease: [0.21, 0.47, 0.32, 0.98] }}
       >
-        <BlurPanel className="mx-6 mb-6 px-6 py-4 bg-black/24 backdrop-blur-md border-white/20">
-          <div className="flex items-center justify-center gap-6 text-white/90">
-            <div className="flex items-center gap-2">
-              <Mic className="w-4 h-4 text-green-400" />
-              <span className="text-sm">Voice-first profiling</span>
+        <BlurPanel className="mx-6 mb-6 px-8 py-4 bg-black/30 backdrop-blur-md border-white/10">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 text-white/80">
+            <div className="flex items-center gap-3">
+              <MapPin className="w-4 h-4 text-[#d4c4a8]" />
+              <span className="text-sm tracking-wide">Shop 2, 323 Main Rd, Sea Point</span>
             </div>
-            <div className="flex items-center gap-2">
-              <Sparkles className="w-4 h-4 text-amber-400" />
-              <span className="text-sm">Psychology-driven matching</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Users className="w-4 h-4 text-blue-400" />
-              <span className="text-sm">Person over CV</span>
+            <div className="hidden sm:block w-px h-4 bg-white/20" />
+            <div className="flex items-center gap-3">
+              <Clock className="w-4 h-4 text-[#d4c4a8]" />
+              <span className="text-sm tracking-wide">Sun-Thu 10AM-12AM · Fri-Sat 10AM-2AM</span>
             </div>
           </div>
         </BlurPanel>

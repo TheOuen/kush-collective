@@ -1,6 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Inter, Playfair_Display } from "next/font/google"
 import "./globals.css"
 
 const inter = Inter({
@@ -9,40 +9,45 @@ const inter = Inter({
   variable: "--font-inter",
 })
 
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-playfair",
+})
+
 export const metadata: Metadata = {
-  title: "Katachi — Design furniture for spaces that breathe.",
-  description: "Architected in Belgium, built to last—timeless pieces.",
-  generator: "v0.app",
+  title: "Kush Collective — Cannabis done right.",
+  description: "For the connoisseurs. For the casuals. For the culture. A cozy, premium cannabis club in Sea Point, Cape Town. Private Members Collective 18+.",
   alternates: {
-    canonical: "https://katachi.example/",
+    canonical: "https://kushcannabiscollective.com/",
   },
   openGraph: {
-    siteName: "Katachi",
-    title: "Design furniture for spaces that breathe. | Katachi",
-    description: "Architected in Belgium, built to last—timeless pieces.",
+    siteName: "Kush Collective",
+    title: "Cannabis done right. | Kush Collective",
+    description: "For the connoisseurs. For the casuals. For the culture. A cozy, premium cannabis club in Sea Point, Cape Town.",
     type: "website",
-    url: "https://katachi.example/",
+    url: "https://kushcannabiscollective.com/",
     images: [
       {
-        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/opengraph-katachi.jpg-7vz2r3hxZA6woukGOmH115Fg7Piyjs.jpeg",
-        alt: "Katachi design furniture — timeless pieces, architected in Belgium",
+        url: "/kush-hero.jpg",
+        alt: "Kush Collective — Premium cannabis club in Cape Town",
         width: 1200,
         height: 630,
       },
     ],
-    locale: "en_BE",
+    locale: "en_ZA",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Design furniture for spaces that breathe. | Katachi",
-    description: "Architected in Belgium, built to last—timeless pieces.",
+    title: "Cannabis done right. | Kush Collective",
+    description: "For the connoisseurs. For the casuals. For the culture. A cozy, premium cannabis club in Sea Point, Cape Town.",
     images: [
       {
-        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/opengraph-katachi.jpg-7vz2r3hxZA6woukGOmH115Fg7Piyjs.jpeg",
-        alt: "Katachi design furniture — timeless pieces, architected in Belgium",
+        url: "/kush-hero.jpg",
+        alt: "Kush Collective — Premium cannabis club in Cape Town",
       },
     ],
-    site: "@katachi",
+    site: "@thekushclubza",
   },
 }
 
@@ -52,7 +57,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} antialiased`}>
+    <html lang="en" className={`${inter.variable} ${playfair.variable} antialiased`}>
       <body className="font-sans bg-neutral-50 text-neutral-900 overflow-x-hidden">{children}</body>
     </html>
   )

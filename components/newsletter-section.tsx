@@ -36,13 +36,13 @@ export function NewsletterSection() {
             <BlurPanel className="p-8 lg:p-12 bg-white/40 backdrop-blur-md grain-texture">
               <div className="text-center mb-8">
                 <h2 className="text-3xl lg:text-4xl font-bold text-neutral-900 mb-4">
-                  <AnimatedText text="Get early " delay={0.2} />
+                  <AnimatedText text="Join the " delay={0.2} />
                   <span className="italic font-light">
-                    <AnimatedText text="access." delay={0.5} />
+                    <AnimatedText text="collective." delay={0.5} />
                   </span>
                 </h2>
                 <p className="text-lg text-neutral-600">
-                  Be the first to know when we launch. Join the waitlist for exclusive beta access and career insights.
+                  Stay updated on new products, events, and exclusive member offers. Join our community.
                 </p>
               </div>
 
@@ -83,7 +83,7 @@ export function NewsletterSection() {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    Join the waitlist
+                    Subscribe
                   </motion.button>
                 </form>
               ) : (
@@ -96,9 +96,9 @@ export function NewsletterSection() {
                   <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Check size={24} className="text-green-600" />
                   </div>
-                  <h3 className="text-xl font-semibold text-neutral-900 mb-2">You're on the list</h3>
+                  <h3 className="text-xl font-semibold text-neutral-900 mb-2">You're in the collective</h3>
                   <p className="text-neutral-600">
-                    We'll notify you when Southbound launches. Get ready to find your purpose.
+                    We'll keep you updated on new products, events, and exclusive member offers.
                   </p>
                 </motion.div>
               )}

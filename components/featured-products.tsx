@@ -1,109 +1,121 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Reveal } from "./reveal"
-import { Mic, Brain, Users, Sparkles, ArrowRight } from "lucide-react"
-
-const journeySteps = [
-  {
-    id: "1",
-    step: "01",
-    title: "Tell us who you are",
-    description: "Speak naturally into your mic. We ask questions rooted in psychology to understand the real you — not just your CV.",
-    icon: Mic,
-    color: "text-green-500",
-    bgColor: "bg-green-500/10",
-  },
-  {
-    id: "2",
-    step: "02",
-    title: "We find your fit",
-    description: "We match you with roles and cultures where you'll actually thrive — based on who you are, not just what's on paper.",
-    icon: Brain,
-    color: "text-amber-500",
-    bgColor: "bg-amber-500/10",
-  },
-  {
-    id: "3",
-    step: "03",
-    title: "Meet your people",
-    description: "Get matched with employers who value what you bring. We give soft hints to both sides for transparent, purposeful connections.",
-    icon: Users,
-    color: "text-blue-500",
-    bgColor: "bg-blue-500/10",
-  },
-]
+import Image from "next/image"
 
 export function FeaturedProducts() {
   return (
-    <section className="py-20 lg:py-32 bg-neutral-50" id="how-it-works">
+    <section className="py-24 lg:py-36 bg-[#faf9f7]" id="about">
       <div className="container-custom">
-        <Reveal>
-          <div className="text-center mb-16">
-            <h2 className="text-4xl text-neutral-900 mb-4 lg:text-6xl">
-              How it <span className="italic font-light">works</span>
-            </h2>
-            <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-              We don't match CVs to job descriptions. We match people to purpose.
-            </p>
-          </div>
-        </Reveal>
-
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12"
+          className="text-center mb-20"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="font-[family-name:var(--font-playfair)] text-4xl text-neutral-900 mb-6 lg:text-6xl">
+            About our <span className="italic font-normal">club</span>
+          </h2>
+          <p className="text-lg text-neutral-500 max-w-3xl mx-auto leading-relaxed">
+            Our club is a cozy, premium space where anyone – from seasoned enjoyers to those curious to explore – can feel welcomed, acknowledged, and at ease. We offer a relaxed, social environment that feels both elevated and effortless, with thoughtful touches throughout and a balcony experience that sets the tone.
+          </p>
+        </motion.div>
+
+        {/* Products Grid */}
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8"
           initial="hidden"
-          animate="visible"
+          whileInView="visible"
+          viewport={{ once: true }}
           variants={{
             hidden: { opacity: 0 },
             visible: {
               opacity: 1,
               transition: {
-                staggerChildren: 0.3,
+                staggerChildren: 0.15,
               },
             },
           }}
         >
-          {journeySteps.map((step, index) => (
-            <motion.div
-              key={step.id}
-              variants={{
-                hidden: { opacity: 0, y: 30 },
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                  transition: {
-                    duration: 0.8,
-                    ease: [0.21, 0.47, 0.32, 0.98],
-                  },
-                },
-              }}
-            >
-              <Reveal delay={index * 0.1}>
-                <div className="bg-white rounded-2xl p-8 h-full shadow-sm hover:shadow-md transition-shadow">
-                  <div className={`w-14 h-14 rounded-xl ${step.bgColor} flex items-center justify-center mb-6`}>
-                    <step.icon className={`w-7 h-7 ${step.color}`} />
-                  </div>
-                  <span className="text-sm font-mono text-neutral-400 mb-2 block">{step.step}</span>
-                  <h3 className="text-xl font-semibold text-neutral-900 mb-3">{step.title}</h3>
-                  <p className="text-neutral-600 leading-relaxed">{step.description}</p>
-                </div>
-              </Reveal>
-            </motion.div>
-          ))}
-        </motion.div>
+          {/* Flower */}
+          <motion.div
+            className="h-full"
+            variants={{
+              hidden: { opacity: 0, y: 30 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+            }}
+          >
+            <div className="bg-white overflow-hidden group h-full flex flex-col">
+              <div className="relative h-72 overflow-hidden flex-shrink-0">
+                <Image
+                  src="/kush-flower.jpg"
+                  alt="Premium Flower"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+              <div className="p-8 flex flex-col flex-grow border border-t-0 border-neutral-200">
+                <h3 className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-neutral-900 mb-3">Flower</h3>
+                <p className="text-neutral-500 leading-relaxed">
+                  Premium, hand-selected flower crafted for a smooth, elevated experience.
+                </p>
+              </div>
+            </div>
+          </motion.div>
 
-        <Reveal delay={0.4}>
-          <div className="mt-16 text-center">
-            <motion.button
-              className="inline-flex items-center gap-2 px-8 py-4 bg-neutral-900 text-white font-semibold rounded-full hover:bg-neutral-800 transition-colors"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              Start your journey
-              <ArrowRight className="w-5 h-5" />
-            </motion.button>
-          </div>
-        </Reveal>
+          {/* Accessories */}
+          <motion.div
+            className="h-full"
+            variants={{
+              hidden: { opacity: 0, y: 30 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+            }}
+          >
+            <div className="bg-white overflow-hidden group h-full flex flex-col">
+              <div className="relative h-72 overflow-hidden flex-shrink-0">
+                <Image
+                  src="/kush-accessories.jpg"
+                  alt="Accessories"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+              <div className="p-8 flex flex-col flex-grow border border-t-0 border-neutral-200">
+                <h3 className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-neutral-900 mb-3">Accessories</h3>
+                <p className="text-neutral-500 leading-relaxed">
+                  Essential accessories to enhance your experience with style and convenience.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Work & Lounge */}
+          <motion.div
+            className="h-full"
+            variants={{
+              hidden: { opacity: 0, y: 30 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+            }}
+          >
+            <div className="bg-white overflow-hidden group h-full flex flex-col">
+              <div className="relative h-72 overflow-hidden flex-shrink-0">
+                <Image
+                  src="/kush-lounge.jpg"
+                  alt="Work & Lounge"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+              <div className="p-8 flex flex-col flex-grow border border-t-0 border-neutral-200">
+                <h3 className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-neutral-900 mb-3">Work & Lounge</h3>
+                <p className="text-neutral-500 leading-relaxed">
+                  Relax, create, and connect in our comfortable, thoughtfully designed space.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   )

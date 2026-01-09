@@ -74,6 +74,12 @@
 
 @theme inline {
   --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
+
+  /* Kush Collective Brand Colors */
+  --color-kush-green: #1a3329;
+  --color-kush-cream: #f5f0e8;
+  --color-kush-gold: #d4c4a8;
 
   /* KATACHI Studio Color System */
   --color-neutral-50: #fafafa;

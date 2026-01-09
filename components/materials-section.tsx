@@ -8,26 +8,26 @@ import { cn } from "@/lib/utils"
 
 const differentiators = [
   {
-    id: "voice",
-    name: "Voice first",
-    description: "Talk naturally into your mic. We capture the real you — your tone, your pauses, your authenticity. No more polished CVs hiding the person.",
+    id: "quality",
+    name: "Premium Quality",
+    description: "Hand-selected, top-shelf cannabis products. We source only the finest strains for a smooth, elevated experience every time.",
     image: "/material-oak-macro.png",
     backgroundImage:
       "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/new-source_bloom_max_1x.jpg-t1V6yfeAZKKcEvWEkPn7Pfx7hkHDMf.jpeg",
     tint: "bg-green-50",
   },
   {
-    id: "purpose",
-    name: "Purpose driven",
-    description: "We go beyond skills and experience. We help you find work that actually matters to you — roles where you'll grow, contribute, and belong.",
+    id: "community",
+    name: "For the Culture",
+    description: "A cozy, welcoming space for connoisseurs and casuals alike. Connect with like-minded individuals in a premium social environment.",
     image: "/material-walnut-macro.png",
     backgroundImage: "/lunar-gray-interior.png",
     tint: "bg-gray-100",
   },
   {
-    id: "transparency",
-    name: "Radical transparency",
-    description: "Know the real culture before you apply. Career progression reality. Team dynamics. Management style. No more interview surprises.",
+    id: "experience",
+    name: "Elevated Experience",
+    description: "TV lounge, workspace, balcony views, refreshments, and local restaurant delivery. Everything you need for the perfect session.",
     image: "/material-steel-macro.png",
     backgroundImage: "/martian-red-interior.png",
     tint: "bg-red-50",
@@ -35,7 +35,7 @@ const differentiators = [
 ]
 
 export function MaterialsSection() {
-  const [activeDiff, setActiveDiff] = useState("voice")
+  const [activeDiff, setActiveDiff] = useState("quality")
 
   const activeDiffData = differentiators.find((m) => m.id === activeDiff) || differentiators[0]
 

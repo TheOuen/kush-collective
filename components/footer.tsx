@@ -1,128 +1,124 @@
 "use client"
-import { motion } from "framer-motion"
-import { Instagram, Twitter, Linkedin, ArrowUpRight } from "lucide-react"
+
+import { Instagram, MapPin, Mail, Clock } from "lucide-react"
+import Image from "next/image"
+import Link from "next/link"
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
 
-  const footerLinks = {
-    "For job seekers": [
-      { name: "Create profile", href: "#" },
-      { name: "Browse opportunities", href: "#" },
-      { name: "Career insights", href: "#" },
-      { name: "Success stories", href: "#" },
-    ],
-    "For employers": [
-      { name: "Post a role", href: "#" },
-      { name: "Pricing", href: "#" },
-      { name: "How matching works", href: "#" },
-      { name: "Enterprise", href: "#" },
-    ],
-    Company: [
-      { name: "About us", href: "#" },
-      { name: "Our methodology", href: "#" },
-      { name: "Blog", href: "#" },
-      { name: "Contact", href: "#" },
-    ],
-  }
-
-  const socialLinks = [
-    { name: "Instagram", icon: Instagram, href: "#" },
-    { name: "Twitter", icon: Twitter, href: "#" },
-    { name: "LinkedIn", icon: Linkedin, href: "#" },
-  ]
-
   return (
-    <footer className="bg-white/[0.02] border-t border-white/[0.02]">
-      <div className="container-custom py-16 lg:py-20">
-        {/* Main Footer Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 mb-12">
-          {/* Brand Section */}
-          <div className="lg:col-span-4">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="text-2xl font-bold text-neutral-900 mb-4">Southbound</h3>
-              <p className="text-neutral-600 mb-6 leading-relaxed">
-                Build your future. Find your purpose. We use psychology-driven matching to connect who you are with where you belong.
-              </p>
-              <div className="flex space-x-4">
-                {socialLinks.map((social) => (
-                  <motion.a
-                    key={social.name}
-                    href={social.href}
-                    className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 transition-all duration-200"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <social.icon size={18} />
-                    <span className="sr-only">{social.name}</span>
-                  </motion.a>
-                ))}
+    <footer className="bg-neutral-950" id="contact">
+      {/* Main Content */}
+      <div className="container-custom">
+        {/* Top Section */}
+        <div className="py-16 lg:py-20 border-b border-neutral-800">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
+            {/* Brand */}
+            <div className="lg:col-span-1">
+              <div className="flex items-center gap-3 mb-5">
+                <Image
+                  src="/kush-logo.png"
+                  alt="Kush Collective"
+                  width={44}
+                  height={44}
+                  className="w-11 h-11"
+                />
+                <div>
+                  <p className="text-white font-bold text-lg">Kush Collective</p>
+                  <p className="text-neutral-500 text-xs">Private Members Collective</p>
+                </div>
               </div>
-            </motion.div>
-          </div>
+              <p className="text-neutral-400 text-sm leading-relaxed mb-6">
+                For the connoisseurs. For the casuals. For the culture.
+              </p>
+              <a
+                href="https://instagram.com/thekushclubza"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-neutral-400 hover:text-white transition-colors text-sm"
+              >
+                <Instagram className="w-5 h-5" />
+                <span>@thekushclubza</span>
+              </a>
+            </div>
 
-          {/* Links Sections */}
-          <div className="lg:col-span-8">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 lg:gap-12">
-              {Object.entries(footerLinks).map(([category, links], index) => (
-                <motion.div
-                  key={category}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <h4 className="font-semibold text-neutral-900 mb-4">{category}</h4>
-                  <ul className="space-y-3">
-                    {links.map((link) => (
-                      <li key={link.name}>
-                        <a
-                          href={link.href}
-                          className="text-neutral-600 hover:text-neutral-900 transition-colors duration-200 group flex items-center"
-                        >
-                          {link.name}
-                          <ArrowUpRight
-                            size={14}
-                            className="ml-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-                          />
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
-              ))}
+            {/* Contact */}
+            <div>
+              <h4 className="text-white font-semibold mb-5">Contact</h4>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3">
+                  <MapPin className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                  <span className="text-neutral-400 text-sm">
+                    Shop 2, 323 Main Rd<br />
+                    Sea Point, Cape Town, 8005
+                  </span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <Mail className="w-4 h-4 text-green-500 flex-shrink-0" />
+                  <a href="mailto:contact@thekushclub.co.za" className="text-neutral-400 hover:text-white text-sm transition-colors">
+                    contact@thekushclub.co.za
+                  </a>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Clock className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                  <div className="text-neutral-400 text-sm">
+                    <p>Sun-Thu: 10AM - 12AM</p>
+                    <p>Fri-Sat: 10AM - 2AM</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            {/* Quick Links */}
+            <div>
+              <h4 className="text-white font-semibold mb-5">Quick Links</h4>
+              <ul className="space-y-3">
+                <li>
+                  <a href="#about" className="text-neutral-400 hover:text-white text-sm transition-colors">About the Club</a>
+                </li>
+                <li>
+                  <a href="#membership" className="text-neutral-400 hover:text-white text-sm transition-colors">Membership</a>
+                </li>
+                <li>
+                  <Link href="/sign-up" className="text-neutral-400 hover:text-white text-sm transition-colors">Join Now</Link>
+                </li>
+                <li>
+                  <Link href="/sign-in" className="text-neutral-400 hover:text-white text-sm transition-colors">Member Login</Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Hours */}
+            <div>
+              <h4 className="text-white font-semibold mb-5">Opening Hours</h4>
+              <div className="space-y-3 text-sm">
+                <div className="flex justify-between">
+                  <span className="text-neutral-400">Sunday - Thursday</span>
+                  <span className="text-white">10AM - 12AM</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-neutral-400">Friday - Saturday</span>
+                  <span className="text-white">10AM - 2AM</span>
+                </div>
+              </div>
+              <div className="mt-6 p-4 bg-neutral-900 rounded-xl">
+                <p className="text-amber-500 font-semibold text-sm mb-1">18+ Only</p>
+                <p className="text-neutral-500 text-xs">Valid ID required for entry</p>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom Section */}
-        <motion.div
-          className="pt-8 pb-4 border-t border-neutral-200 flex justify-center items-center"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          viewport={{ once: true }}
-        >
-          <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6 text-sm text-neutral-500 text-center">
-            <p>&copy; {currentYear} Southbound. All rights reserved.</p>
-            <div className="flex space-x-6">
-              <a href="#" className="hover:text-neutral-700 transition-colors">
-                Privacy policy
-              </a>
-              <a href="#" className="hover:text-neutral-700 transition-colors">
-                Terms of service
-              </a>
-              <a href="#" className="hover:text-neutral-700 transition-colors">
-                Cookies
-              </a>
-            </div>
-          </div>
-        </motion.div>
+        {/* Bottom Bar */}
+        <div className="py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-neutral-600 text-sm">
+            &copy; {currentYear} Kush Collective. All rights reserved.
+          </p>
+          <p className="text-neutral-600 text-sm">
+            Please consume responsibly.
+          </p>
+        </div>
       </div>
     </footer>
   )

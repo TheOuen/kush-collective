@@ -7,60 +7,60 @@ import { Reveal } from "./reveal"
 
 const categories = [
   {
-    id: "remote-freedom",
-    name: "REMOTE FREEDOM",
-    tagline: "Work from anywhere",
+    id: "premium-flower",
+    name: "PREMIUM FLOWER",
+    tagline: "Hand-selected strains",
     image: "/modern-armchair-pillows.png",
-    count: "234 roles",
+    count: "Top-shelf cannabis",
   },
   {
-    id: "big-picture",
-    name: "BIG PICTURE",
-    tagline: "Shape the vision",
+    id: "indica",
+    name: "INDICA",
+    tagline: "Relax & unwind",
     image: "/modular-cushion-bench.png",
-    count: "89 roles",
+    count: "Deep relaxation",
   },
   {
-    id: "structured-growth",
-    name: "STRUCTURED GROWTH",
-    tagline: "Clear paths forward",
+    id: "sativa",
+    name: "SATIVA",
+    tagline: "Energize & create",
     image: "/cloud-white-sofa.png",
-    count: "156 roles",
+    count: "Uplifting effects",
   },
   {
-    id: "flex-life",
-    name: "FLEX LIFE",
-    tagline: "Balance on your terms",
+    id: "hybrid",
+    name: "HYBRID",
+    tagline: "Best of both",
     image: "/distressed-artistic-chair.png",
-    count: "312 roles",
+    count: "Balanced experience",
   },
   {
-    id: "impact-driven",
-    name: "IMPACT DRIVEN",
-    tagline: "Work that matters",
+    id: "accessories",
+    name: "ACCESSORIES",
+    tagline: "Quality gear",
     image: "/green-modular-loveseat.png",
-    count: "178 roles",
+    count: "Premium equipment",
   },
   {
-    id: "creative-space",
-    name: "CREATIVE SPACE",
-    tagline: "Express yourself",
+    id: "day-pass",
+    name: "DAY PASS",
+    tagline: "Single-day access",
     image: "/braided-rope-loveseat.png",
-    count: "94 roles",
+    count: "Full club privileges",
   },
   {
-    id: "team-builders",
-    name: "TEAM BUILDERS",
-    tagline: "Lead & grow others",
+    id: "monthly-pass",
+    name: "MONTHLY PASS",
+    tagline: "30-day unlimited",
     image: "/colorful-patchwork-sofa.png",
-    count: "67 roles",
+    count: "Exclusive benefits",
   },
   {
-    id: "deep-focus",
-    name: "DEEP FOCUS",
-    tagline: "Master your craft",
+    id: "membership",
+    name: "MEMBERSHIP",
+    tagline: "Join the collective",
     image: "/minimalist-boucle-loveseat.png",
-    count: "143 roles",
+    count: "Become a member",
   },
 ]
 
@@ -83,9 +83,9 @@ export function CollectionStrip() {
       <div className="mb-12">
         <Reveal>
           <div className="container-custom text-center">
-            <h2 className="text-neutral-900 mb-4 text-6xl font-normal">Find your fit</h2>
+            <h2 className="text-neutral-900 mb-4 text-6xl font-normal">Browse our selection</h2>
             <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-              Browse roles by how you want to work, not just what you do.
+              Premium, hand-selected cannabis products for a smooth, elevated experience.
             </p>
           </div>
         </Reveal>
@@ -141,7 +141,7 @@ export function CollectionStrip() {
       </div>
 
       <div className="text-center mt-8">
-        <p className="text-sm text-neutral-500">← Drag to explore categories →</p>
+        <p className="text-sm text-neutral-500">← Drag to explore products →</p>
       </div>
     </section>
   )
