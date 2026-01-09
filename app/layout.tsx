@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     url: "https://kushcannabiscollective.com/",
     images: [
       {
-        url: "/kush-hero.jpg",
+        url: "https://kushcannabiscollective.com/kush-hero.jpg",
         alt: "Kush Collective — Premium cannabis club in Cape Town",
         width: 1200,
         height: 630,
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     description: "For the connoisseurs. For the casuals. For the culture. A cozy, premium cannabis club in Sea Point, Cape Town.",
     images: [
       {
-        url: "/kush-hero.jpg",
+        url: "https://kushcannabiscollective.com/kush-hero.jpg",
         alt: "Kush Collective — Premium cannabis club in Cape Town",
       },
     ],
