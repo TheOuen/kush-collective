@@ -24,13 +24,44 @@ export default function SignInPage() {
 
   return (
     <div className="min-h-screen flex">
-      {/* Left Side - Form */}
+      {/* Left Side - Image */}
+      <div className="hidden lg:block lg:flex-1 relative">
+        <Image
+          src="/kush-lounge.jpg"
+          alt="Kush Collective Lounge"
+          fill
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-[#1a3329]/70" />
+        <div className="absolute inset-0 flex items-center justify-center p-12">
+          <div className="text-center text-[#f5f0e8]">
+            <motion.h3
+              className="font-[family-name:var(--font-playfair)] text-5xl font-bold mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              Welcome back
+            </motion.h3>
+            <motion.p
+              className="text-lg text-[#f5f0e8]/70 max-w-md"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              Sign in to access your member dashboard, view your pass, and discover exclusive offers.
+            </motion.p>
+          </div>
+        </div>
+      </div>
+
+      {/* Right Side - Form */}
       <div className="flex-1 flex flex-col justify-center px-8 lg:px-16 xl:px-24 bg-white">
         <div className="w-full max-w-md mx-auto">
           {/* Back Link */}
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-neutral-500 hover:text-neutral-900 transition-colors mb-8"
+            className="inline-flex items-center gap-2 text-neutral-400 hover:text-neutral-900 transition-colors mb-8"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to home
@@ -51,8 +82,8 @@ export default function SignInPage() {
               className="w-12 h-12"
             />
             <div>
-              <h1 className="text-xl font-bold text-neutral-900">Kush Collective</h1>
-              <p className="text-xs text-neutral-500">Private Members Collective</p>
+              <h1 className="font-[family-name:var(--font-playfair)] text-xl font-bold text-neutral-900">Kush Collective</h1>
+              <p className="text-xs text-neutral-400 tracking-wider uppercase">Private Members Collective</p>
             </div>
           </motion.div>
 
@@ -62,9 +93,9 @@ export default function SignInPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <h2 className="text-3xl font-bold text-neutral-900 mb-2">Welcome back</h2>
-            <p className="text-neutral-600 mb-8">
-              Sign in to access your member dashboard and exclusive benefits.
+            <h2 className="font-[family-name:var(--font-playfair)] text-3xl font-bold text-neutral-900 mb-2">Sign in to your account</h2>
+            <p className="text-neutral-500 mb-8">
+              Access your member dashboard and exclusive benefits.
             </p>
           </motion.div>
 
@@ -89,7 +120,7 @@ export default function SignInPage() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="you@example.com"
-                  className="w-full pl-12 pr-4 py-3.5 bg-neutral-50 border border-neutral-200 rounded-xl text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all"
+                  className="w-full pl-12 pr-4 py-3.5 bg-[#faf9f7] border border-neutral-200 text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#1a3329] focus:border-transparent transition-all"
                   required
                 />
               </div>
@@ -101,7 +132,7 @@ export default function SignInPage() {
                 <label htmlFor="password" className="block text-sm font-medium text-neutral-700">
                   Password
                 </label>
-                <Link href="/forgot-password" className="text-sm text-green-600 hover:text-green-700 transition-colors">
+                <Link href="/forgot-password" className="text-sm text-[#1a3329] hover:underline transition-colors">
                   Forgot password?
                 </Link>
               </div>
@@ -113,7 +144,7 @@ export default function SignInPage() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Enter your password"
-                  className="w-full pl-12 pr-12 py-3.5 bg-neutral-50 border border-neutral-200 rounded-xl text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all"
+                  className="w-full pl-12 pr-12 py-3.5 bg-[#faf9f7] border border-neutral-200 text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#1a3329] focus:border-transparent transition-all"
                   required
                 />
                 <button
@@ -130,7 +161,7 @@ export default function SignInPage() {
             <motion.button
               type="submit"
               disabled={isLoading}
-              className="w-full py-4 bg-green-600 text-white font-semibold rounded-xl hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full py-4 bg-[#1a3329] text-[#f5f0e8] font-semibold tracking-wide uppercase text-sm hover:bg-[#1a3329]/90 focus:outline-none focus:ring-2 focus:ring-[#1a3329] focus:ring-offset-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               whileHover={{ scale: 1.01 }}
               whileTap={{ scale: 0.99 }}
             >
@@ -151,7 +182,7 @@ export default function SignInPage() {
           {/* Divider */}
           <div className="flex items-center gap-4 my-8">
             <div className="flex-1 h-px bg-neutral-200" />
-            <span className="text-sm text-neutral-500">or continue with</span>
+            <span className="text-sm text-neutral-400">or continue with</span>
             <div className="flex-1 h-px bg-neutral-200" />
           </div>
 
@@ -162,7 +193,7 @@ export default function SignInPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <button className="flex items-center justify-center gap-2 py-3 px-4 border border-neutral-200 rounded-xl hover:bg-neutral-50 transition-colors">
+            <button className="flex items-center justify-center gap-2 py-3 px-4 border border-neutral-200 hover:bg-[#faf9f7] transition-colors">
               <svg className="w-5 h-5" viewBox="0 0 24 24">
                 <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
                 <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
@@ -171,7 +202,7 @@ export default function SignInPage() {
               </svg>
               <span className="text-sm font-medium text-neutral-700">Google</span>
             </button>
-            <button className="flex items-center justify-center gap-2 py-3 px-4 border border-neutral-200 rounded-xl hover:bg-neutral-50 transition-colors">
+            <button className="flex items-center justify-center gap-2 py-3 px-4 border border-neutral-200 hover:bg-[#faf9f7] transition-colors">
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.341-3.369-1.341-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
               </svg>
@@ -181,47 +212,16 @@ export default function SignInPage() {
 
           {/* Sign Up Link */}
           <motion.p
-            className="text-center mt-8 text-neutral-600"
+            className="text-center mt-8 text-neutral-500"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            Don't have an account?{" "}
-            <Link href="/sign-up" className="text-green-600 font-semibold hover:text-green-700 transition-colors">
+            Don&apos;t have an account?{" "}
+            <Link href="/sign-up" className="text-[#1a3329] font-semibold hover:underline transition-colors">
               Sign up
             </Link>
           </motion.p>
-        </div>
-      </div>
-
-      {/* Right Side - Image */}
-      <div className="hidden lg:block lg:flex-1 relative">
-        <Image
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/u3195299943_une_vue_sur_lespace_toil_--ar_11_--sref_httpss.mj_f1cd1575-c301-46fa-8b30-665ae1ab22a0_3_bloom_subtle_6x.png-EslKdscYhdWOUeP4RBajclEejxh8iO.jpeg"
-          alt="Kush Collective"
-          fill
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="absolute inset-0 flex items-center justify-center p-12">
-          <div className="text-center text-white">
-            <motion.h3
-              className="text-4xl font-bold mb-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-            >
-              Cannabis done right.
-            </motion.h3>
-            <motion.p
-              className="text-lg text-white/80 max-w-md"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-            >
-              For the connoisseurs. For the casuals. For the culture.
-            </motion.p>
-          </div>
         </div>
       </div>
     </div>
