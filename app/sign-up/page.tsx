@@ -54,7 +54,7 @@ export default function SignUpPage() {
   }
 
   const strengthLabels = ["Weak", "Fair", "Good", "Strong"]
-  const strengthColors = ["bg-red-500", "bg-orange-500", "bg-yellow-500", "bg-green-500"]
+  const strengthColors = ["bg-red-500", "bg-orange-500", "bg-amber-500", "bg-[#1a3329]"]
 
   return (
     <div className="min-h-screen flex">
@@ -66,11 +66,11 @@ export default function SignUpPage() {
           fill
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-[#1a3329]/70" />
         <div className="absolute inset-0 flex items-center justify-center p-12">
-          <div className="text-center text-white">
+          <div className="text-center text-[#f5f0e8]">
             <motion.h3
-              className="text-4xl font-bold mb-4"
+              className="font-[family-name:var(--font-playfair)] text-5xl font-bold mb-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
@@ -78,7 +78,7 @@ export default function SignUpPage() {
               Join the Collective
             </motion.h3>
             <motion.p
-              className="text-lg text-white/80 max-w-md mb-8"
+              className="text-lg text-[#f5f0e8]/70 max-w-md mb-10"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
@@ -86,7 +86,7 @@ export default function SignUpPage() {
               Become a member and enjoy exclusive access to premium flower, amenities, and a relaxed social environment.
             </motion.p>
             <motion.div
-              className="flex flex-col gap-3 text-left max-w-sm mx-auto"
+              className="flex flex-col gap-4 text-left max-w-sm mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
@@ -98,10 +98,10 @@ export default function SignUpPage() {
                 "Food ordering & refreshments",
               ].map((benefit, index) => (
                 <div key={index} className="flex items-center gap-3">
-                  <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Check className="w-3 h-3 text-white" />
+                  <div className="w-5 h-5 bg-[#f5f0e8] rounded-full flex items-center justify-center flex-shrink-0">
+                    <Check className="w-3 h-3 text-[#1a3329]" />
                   </div>
-                  <span className="text-white/90">{benefit}</span>
+                  <span className="text-[#f5f0e8]/90">{benefit}</span>
                 </div>
               ))}
             </motion.div>
@@ -136,8 +136,8 @@ export default function SignUpPage() {
               className="w-12 h-12"
             />
             <div>
-              <h1 className="text-xl font-bold text-neutral-900">Kush Collective</h1>
-              <p className="text-xs text-neutral-500">Private Members Collective</p>
+              <h1 className="font-[family-name:var(--font-playfair)] text-xl font-bold text-neutral-900">Kush Collective</h1>
+              <p className="text-xs text-neutral-400 tracking-wider uppercase">Private Members Collective</p>
             </div>
           </motion.div>
 
@@ -149,14 +149,14 @@ export default function SignUpPage() {
             transition={{ duration: 0.5, delay: 0.1 }}
           >
             <div className="flex items-center gap-2">
-              <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold ${step >= 1 ? 'bg-green-600 text-white' : 'bg-neutral-200 text-neutral-500'}`}>
+              <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold ${step >= 1 ? 'bg-[#1a3329] text-[#f5f0e8]' : 'bg-neutral-200 text-neutral-500'}`}>
                 {step > 1 ? <Check className="w-4 h-4" /> : "1"}
               </div>
               <span className={`text-sm ${step >= 1 ? 'text-neutral-900 font-medium' : 'text-neutral-500'}`}>Personal Info</span>
             </div>
             <div className="flex-1 h-px bg-neutral-200" />
             <div className="flex items-center gap-2">
-              <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold ${step >= 2 ? 'bg-green-600 text-white' : 'bg-neutral-200 text-neutral-500'}`}>
+              <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold ${step >= 2 ? 'bg-[#1a3329] text-[#f5f0e8]' : 'bg-neutral-200 text-neutral-500'}`}>
                 2
               </div>
               <span className={`text-sm ${step >= 2 ? 'text-neutral-900 font-medium' : 'text-neutral-500'}`}>Account</span>
@@ -169,10 +169,10 @@ export default function SignUpPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.15 }}
           >
-            <h2 className="text-3xl font-bold text-neutral-900 mb-2">
+            <h2 className="font-[family-name:var(--font-playfair)] text-3xl font-bold text-neutral-900 mb-2">
               {step === 1 ? "Create your account" : "Set up your password"}
             </h2>
-            <p className="text-neutral-600 mb-8">
+            <p className="text-neutral-500 mb-8">
               {step === 1
                 ? "Join our private members collective today."
                 : "Choose a secure password for your account."
@@ -205,7 +205,7 @@ export default function SignUpPage() {
                         value={formData.firstName}
                         onChange={handleChange}
                         placeholder="John"
-                        className="w-full pl-12 pr-4 py-3.5 bg-neutral-50 border border-neutral-200 rounded-xl text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all"
+                        className="w-full pl-12 pr-4 py-3.5 bg-[#faf9f7] border border-neutral-200 text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#1a3329] focus:border-transparent transition-all"
                         required
                       />
                     </div>
@@ -221,7 +221,7 @@ export default function SignUpPage() {
                       value={formData.lastName}
                       onChange={handleChange}
                       placeholder="Doe"
-                      className="w-full px-4 py-3.5 bg-neutral-50 border border-neutral-200 rounded-xl text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all"
+                      className="w-full px-4 py-3.5 bg-[#faf9f7] border border-neutral-200 text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#1a3329] focus:border-transparent transition-all"
                       required
                     />
                   </div>
@@ -241,7 +241,7 @@ export default function SignUpPage() {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="you@example.com"
-                      className="w-full pl-12 pr-4 py-3.5 bg-neutral-50 border border-neutral-200 rounded-xl text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all"
+                      className="w-full pl-12 pr-4 py-3.5 bg-[#faf9f7] border border-neutral-200 text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#1a3329] focus:border-transparent transition-all"
                       required
                     />
                   </div>
@@ -261,21 +261,21 @@ export default function SignUpPage() {
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="+27 82 123 4567"
-                      className="w-full pl-12 pr-4 py-3.5 bg-neutral-50 border border-neutral-200 rounded-xl text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all"
+                      className="w-full pl-12 pr-4 py-3.5 bg-[#faf9f7] border border-neutral-200 text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#1a3329] focus:border-transparent transition-all"
                       required
                     />
                   </div>
                 </div>
 
                 {/* Age Verification */}
-                <div className="flex items-start gap-3 p-4 bg-amber-50 border border-amber-200 rounded-xl">
+                <div className="flex items-start gap-3 p-4 bg-amber-50 border border-amber-200">
                   <input
                     id="ageVerified"
                     name="ageVerified"
                     type="checkbox"
                     checked={formData.ageVerified}
                     onChange={handleChange}
-                    className="mt-1 w-4 h-4 text-green-600 border-neutral-300 rounded focus:ring-green-500"
+                    className="mt-1 w-4 h-4 text-[#1a3329] border-neutral-300 rounded focus:ring-[#1a3329]"
                     required
                   />
                   <label htmlFor="ageVerified" className="text-sm text-amber-800">
@@ -299,7 +299,7 @@ export default function SignUpPage() {
                       value={formData.password}
                       onChange={handleChange}
                       placeholder="Create a strong password"
-                      className="w-full pl-12 pr-12 py-3.5 bg-neutral-50 border border-neutral-200 rounded-xl text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all"
+                      className="w-full pl-12 pr-12 py-3.5 bg-[#faf9f7] border border-neutral-200 text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#1a3329] focus:border-transparent transition-all"
                       required
                     />
                     <button
@@ -317,12 +317,12 @@ export default function SignUpPage() {
                         {[0, 1, 2, 3].map((i) => (
                           <div
                             key={i}
-                            className={`h-1.5 flex-1 rounded-full ${i < passwordStrength() ? strengthColors[passwordStrength() - 1] : 'bg-neutral-200'}`}
+                            className={`h-1.5 flex-1 ${i < passwordStrength() ? strengthColors[passwordStrength() - 1] : 'bg-neutral-200'}`}
                           />
                         ))}
                       </div>
                       <p className="text-xs text-neutral-500">
-                        Password strength: <span className={`font-medium ${passwordStrength() >= 3 ? 'text-green-600' : passwordStrength() >= 2 ? 'text-yellow-600' : 'text-red-600'}`}>
+                        Password strength: <span className={`font-medium ${passwordStrength() >= 3 ? 'text-[#1a3329]' : passwordStrength() >= 2 ? 'text-amber-600' : 'text-red-600'}`}>
                           {strengthLabels[passwordStrength() - 1] || "Too weak"}
                         </span>
                       </p>
@@ -344,7 +344,7 @@ export default function SignUpPage() {
                       value={formData.confirmPassword}
                       onChange={handleChange}
                       placeholder="Confirm your password"
-                      className="w-full pl-12 pr-4 py-3.5 bg-neutral-50 border border-neutral-200 rounded-xl text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all"
+                      className="w-full pl-12 pr-4 py-3.5 bg-[#faf9f7] border border-neutral-200 text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#1a3329] focus:border-transparent transition-all"
                       required
                     />
                   </div>
@@ -361,14 +361,14 @@ export default function SignUpPage() {
                     type="checkbox"
                     checked={formData.agreeTerms}
                     onChange={handleChange}
-                    className="mt-1 w-4 h-4 text-green-600 border-neutral-300 rounded focus:ring-green-500"
+                    className="mt-1 w-4 h-4 text-[#1a3329] border-neutral-300 rounded focus:ring-[#1a3329]"
                     required
                   />
                   <label htmlFor="agreeTerms" className="text-sm text-neutral-600">
                     I agree to the{" "}
-                    <Link href="#" className="text-green-600 hover:text-green-700 transition-colors">Terms of Service</Link>
+                    <Link href="#" className="text-[#1a3329] hover:underline transition-colors">Terms of Service</Link>
                     {" "}and{" "}
-                    <Link href="#" className="text-green-600 hover:text-green-700 transition-colors">Privacy Policy</Link>
+                    <Link href="#" className="text-[#1a3329] hover:underline transition-colors">Privacy Policy</Link>
                   </label>
                 </div>
               </>
@@ -380,7 +380,7 @@ export default function SignUpPage() {
                 <motion.button
                   type="button"
                   onClick={() => setStep(1)}
-                  className="flex-1 py-4 border border-neutral-200 text-neutral-700 font-semibold rounded-xl hover:bg-neutral-50 focus:outline-none transition-all"
+                  className="flex-1 py-4 border border-neutral-200 text-neutral-700 font-semibold hover:bg-neutral-50 focus:outline-none transition-all"
                   whileHover={{ scale: 1.01 }}
                   whileTap={{ scale: 0.99 }}
                 >
@@ -390,7 +390,7 @@ export default function SignUpPage() {
               <motion.button
                 type="submit"
                 disabled={isLoading || (step === 2 && formData.password !== formData.confirmPassword)}
-                className="flex-1 py-4 bg-green-600 text-white font-semibold rounded-xl hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                className="flex-1 py-4 bg-[#1a3329] text-[#f5f0e8] font-semibold tracking-wide uppercase text-sm hover:bg-[#1a3329]/90 focus:outline-none focus:ring-2 focus:ring-[#1a3329] focus:ring-offset-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                 whileHover={{ scale: 1.01 }}
                 whileTap={{ scale: 0.99 }}
               >
@@ -413,13 +413,13 @@ export default function SignUpPage() {
 
           {/* Sign In Link */}
           <motion.p
-            className="text-center mt-8 text-neutral-600"
+            className="text-center mt-8 text-neutral-500"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             Already have an account?{" "}
-            <Link href="/sign-in" className="text-green-600 font-semibold hover:text-green-700 transition-colors">
+            <Link href="/sign-in" className="text-[#1a3329] font-semibold hover:underline transition-colors">
               Sign in
             </Link>
           </motion.p>
