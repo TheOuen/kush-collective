@@ -22,8 +22,7 @@ export function Header() {
     <motion.header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        "backdrop-blur-md border-b border-white/[0.02]",
-        isScrolled ? "bg-white/90" : "bg-transparent",
+        isScrolled ? "bg-white border-b border-neutral-200" : "bg-transparent",
       )}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -47,14 +46,14 @@ export function Header() {
               />
               <div className="flex flex-col">
                 <span className={cn(
-                  "text-lg lg:text-xl font-bold tracking-tight transition-colors",
-                  isScrolled ? "text-neutral-900" : "text-white",
+                  "font-[family-name:var(--font-playfair)] text-lg lg:text-xl font-bold tracking-tight transition-colors",
+                  isScrolled ? "text-neutral-900" : "text-[#f5f0e8]",
                 )}>
                   Kush Collective
                 </span>
                 <span className={cn(
-                  "text-[10px] lg:text-xs font-light tracking-wide transition-colors hidden sm:block",
-                  isScrolled ? "text-neutral-500" : "text-white/70",
+                  "text-[10px] lg:text-xs tracking-[0.15em] uppercase transition-colors hidden sm:block",
+                  isScrolled ? "text-neutral-400" : "text-[#d4c4a8]",
                 )}>
                   Private Members Collective
                 </span>
@@ -63,28 +62,28 @@ export function Header() {
           </motion.div>
 
           {/* Auth Buttons */}
-          <div className="flex items-center gap-3">
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+          <div className="flex items-center gap-4">
+            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
               <Link
                 href="/sign-in"
                 className={cn(
-                  "px-4 py-2 rounded-full font-medium text-sm transition-all hidden sm:inline-block",
+                  "px-5 py-2 font-medium text-sm tracking-wide transition-all hidden sm:inline-block",
                   isScrolled
-                    ? "text-neutral-700 hover:text-neutral-900"
-                    : "text-white/90 hover:text-white",
+                    ? "text-neutral-600 hover:text-neutral-900"
+                    : "text-[#f5f0e8]/80 hover:text-[#f5f0e8]",
                 )}
               >
                 Sign in
               </Link>
             </motion.div>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
               <Link
                 href="/sign-up"
                 className={cn(
-                  "px-5 py-2.5 rounded-full font-medium text-sm transition-all",
+                  "px-6 py-3 font-semibold text-sm tracking-wide uppercase transition-all",
                   isScrolled
-                    ? "bg-green-600 text-white hover:bg-green-700"
-                    : "bg-white text-neutral-900 hover:bg-white/90",
+                    ? "bg-[#1a3329] text-[#f5f0e8] hover:bg-[#1a3329]/90"
+                    : "bg-[#f5f0e8] text-[#1a3329] hover:bg-white",
                 )}
               >
                 Become a Member

@@ -52,7 +52,7 @@ export function HeroSection() {
         transition={{ duration: 1.2, ease: [0.21, 0.47, 0.32, 0.98] }}
       >
         <Image
-          src="/kush-hero.jpg"
+          src="/kush-lounge-bg.jpg"
           alt="Kush Collective - Premium cannabis club in Sea Point, Cape Town"
           fill
           className="object-cover"
